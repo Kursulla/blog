@@ -1,0 +1,44 @@
+package rs.webnet.util.blog;
+
+import android.app.Activity;
+import android.content.Context;
+import android.util.Log;
+
+
+
+public class BLog {
+    private static boolean debugMode = false;
+	
+    public static void debug(Activity activity, Object string){
+        if(!BLog.debugMode)return;
+        Log.d("*** WN_DEBUG "+activity.getLocalClassName()+" ***",string.toString());
+    }
+    
+    public static void error(Activity activity, String string){
+        if(!BLog.debugMode)return;
+        Log.e("*** WN_ERROR ***", string.toString());
+    }
+    
+    public static void warning(Activity activity, String string){
+        if(!BLog.debugMode)return;
+        Log.w("*** WN_WARNING ***",string.toString());
+    }
+    
+    
+    public static void d(String tag,String msg){
+        if(!BLog.debugMode)return;
+        Log.d(tag,msg);
+    }
+    public static void w(String tag,String msg){
+        if(!BLog.debugMode)return;
+        Log.w(tag,msg);
+    }
+    public static void i(String tag,String msg){
+        if(!BLog.debugMode)return;
+        Log.i(tag,msg);
+    }    
+    public static void e(String tag,String msg){
+        if(!BLog.debugMode)return;
+        Log.e(tag,msg);
+    }
+}
